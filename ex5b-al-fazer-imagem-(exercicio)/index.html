@@ -14,7 +14,7 @@
       height: 100vh;
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
+      background-color: #ffffff;
     }
 
     /* Contêiner para a imagem e o texto */
@@ -68,9 +68,34 @@
   <!-- Script JavaScript embutido na página -->
   <script>
 
+    // Seleciona a imagem e os textos pelo ID
+    const image = document.querySelector('#myImage');
+    const mainText = document.querySelector('#myText');
+    const subText = document.querySelector('#subText');
 
-    // 1ª Digitação (Resolva aqui o exercício)
+    // Adiciona um evento de mouseover à imagem
+    image.addEventListener('mouseover', () => {
+      // Altera a fonte da imagem
+      image.src = 'image2.png';
 
+      // Altera o texto principal
+      mainText.textContent = 'Você passou o mouse sobre a imagem!';
+      
+      // Altera o texto adicional
+      subText.textContent = 'Doja Cat - Linda demais!';
+    });
+
+    // Adiciona um evento de mouseout para reverter as alterações
+    image.addEventListener('mouseout', () => {
+      // Reverte a fonte da imagem
+      image.src = 'image.png';
+
+      // Reverte o texto principal
+      mainText.textContent = 'Passe o mouse sobre a imagem';
+      
+      // Reverte o texto adicional
+      subText.textContent = 'Sabrina Carpenter - Linda!';
+    });
 
   </script>
 </body>
