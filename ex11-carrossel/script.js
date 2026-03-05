@@ -6,14 +6,31 @@ let currentSlide = 0; // Índice do slide atual
 let autoSlideInterval; // Variável para armazenar o intervalo de transição automática
 
 // Função para exibir um slide específico
+function showSlide (index) {
+    slides.forEach((slide, i) => {
+     // Adiciona a classe "active" ao slide atual e remove dos demais
+      slide.classList.toggle('active', i === index);    
+    });
+}
 
-  // 1ª Digitação (Aqui)
 
 // Função para avançar para o próximo slide
+function nextSlide() {
+  // Calcula o índice do próximo slide
+  currentSlide = (currentSlide + 1) % slides.length;
+  // Exibe o próximo slide
+  showSlide(currentSlide);
+}
 
 
 // Função para voltar ao slide anterior
+function prevSlide () {
+// Calcula o índice do slide anterior
+currentSlide = (currentSlide - 1 + slides.length) %slides.length;633+-+
+// Exibe o slide anterior
+showSlide(currentSlide);
 
+}
 
 // Função para iniciar a transição automática de slides
 function startAutoSlide() {
