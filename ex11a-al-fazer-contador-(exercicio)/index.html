@@ -50,7 +50,60 @@
   <script>
 
 
-    // 1ª Digitação (Resolva aqui o exercício)
+
+  // 1ª Digitação (Resolva aqui o exercício)
+    
+    const timer = document.getElementById("timer");
+    
+    
+    const startBtn = document.getElementById("startButton");
+    const pauseBtn = document.getElementById("pauseButton");
+    const resetBtn = document.getElementById("resetButton");
+
+
+    let tempo = 0;
+    let intervalo;
+
+    // iniciar
+    startBtn.addEventListener("click", () => {
+
+      if(!intervalo){
+
+        intervalo = setInterval(() => {
+          tempo++;
+          timer.textContent = tempo;
+
+        },1000);
+      }
+
+  });
+
+
+  // Pause
+
+  pauseBtn.addEventListener("click", () => {
+    
+    clearInterval(intervalo);
+    intervalo = null;
+  });
+
+
+  // Reset
+
+  resetBtn.addEventListener("click", () => {
+
+    clearInterval(intervalo);
+    intervalo = null;
+
+    tempo = 0;
+    timer.textContent = tempo;
+
+});
+    
+
+
+
+    
 
 
   </script>
